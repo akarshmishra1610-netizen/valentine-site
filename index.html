@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Be My Valentine?</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+body {
+margin: 0;
+font-family: "Poppins", sans-serif;
+background: linear-gradient(135deg, #ffd6e8, #ffeef6);
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.card {
+background: white;
+border-radius: 20px;
+padding: 30px 25px 40px;
+width: 90%;
+max-width: 360px;
+text-align: center;
+box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.emoji {
+font-size: 40px;
+margin-bottom: 10px;
+}
+
+h1 {
+font-size: 22px;
+color: #222;
+margin-bottom: 25px;
+}
+
+.buttons {
+position: relative;
+height: 70px;
+}
+
+button {
+border: none;
+padding: 14px 22px;
+border-radius: 14px;
+font-size: 16px;
+cursor: pointer;
+}
+
+.yes {
+background: #ff4f8b;
+color: white;
+font-weight: 600;
+}
+
+.no {
+position: absolute;
+right: 0;
+background: #f1f1f1;
+}
+
+.hint {
+margin-top: 12px;
+font-size: 14px;
+color: #ff6fa1;
+}
+
+.result {
+display: none;
+margin-top: 20px;
+font-size: 18px;
+color: #ff4f8b;
+font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<div class="emoji">🐻‍❣️</div>
+<h1>Anushka, will you be my Valentine?</h1>
+
+<div class="buttons">
+<button class="yes" onclick="sayYes()">Yes 💖</button>
+<button class="no" id="noBtn">No 🙈</button>
+</div>
+
+<div class="hint">"No" seems a bit shy</div>
+<div class="result" id="result">Yay! 💕 You just made my day 🥰</div>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+const x = Math.random() * 200 - 100;
+const y = Math.random() * 60 - 30;
+noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+function sayYes() {
+document.querySelector(".buttons").style.display = "none";
+document.querySelector(".hint").style.display = "none";
+document.getElementById("result").style.display = "block";
+}
+</script>
+
+</body>
+</html>
